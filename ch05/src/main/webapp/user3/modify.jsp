@@ -1,4 +1,4 @@
-<%@page import="vo.User2vo"%>
+<%@page import="vo.User3vo"%>
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.PreparedStatement"%>
 <%@page import="java.sql.Connection"%>
@@ -13,7 +13,7 @@
 	String pass = "1234";
 	
 	// 수정할 사용자 객체
-	User2vo user2 = null;
+	User3vo user3 = null;
 
 	try{
 		Class.forName("oracle.jdbc.driver.OracleDriver");		
@@ -26,11 +26,11 @@
 		ResultSet rs = psmt.executeQuery();
 		
 		if(rs.next()){
-			user2 = new User2vo();
-			user2.setUser_id(rs.getString(1));
-			user2.setName(rs.getString(2));
-			user2.setHp(rs.getString(3));
-			user2.setAge(rs.getInt(4));
+			user3 = new User3vo();
+			user3.setUser_id(rs.getString(1));
+			user3.setName(rs.getString(2));
+			user3.setHp(rs.getString(3));
+			user3.setAge(rs.getInt(4));
 		}
 		
 		rs.close();
@@ -48,10 +48,10 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>user2::modify</title>
+		<title>user3::modify</title>
 	</head>
 	<body>
-		<h3>User2 수정</h3>
+		<h3>User3 수정</h3>
 		
 		<a href="../jdbc.jsp">처음으로</a>
 		<a href="./list.jsp">목록이동</a>
@@ -60,19 +60,19 @@
 			<table border="1">
 				<tr>
 					<td>아이디</td>
-					<td><input type="text" name="user_id" readonly value="<%= user2.getUser_id() %>" placeholder="아이디 입력"/></td>
+					<td><input type="text" name="user_id" readonly value="<%= user3.getUser_id() %>" placeholder="아이디 입력"/></td>
 				</tr>
 				<tr>
 					<td>이름</td>
-					<td><input type="text" name="name" value="<%= user2.getName() %>" placeholder="이름 입력"/></td>
+					<td><input type="text" name="name" value="<%= user3.getName() %>" placeholder="이름 입력"/></td>
 				</tr>
 				<tr>
 					<td>휴대폰</td>
-					<td><input type="text" name="hp" value="<%= user2.getHp() %>" placeholder="휴대폰 입력(- 포함)"/></td>
+					<td><input type="text" name="hp" value="<%= user3.getHp() %>" placeholder="휴대폰 입력(- 포함)"/></td>
 				</tr>
 				<tr>
 					<td>나이</td>
-					<td><input type="number" name="age" value="<%= user2.getAge() %>" placeholder="숫자 입력"/></td>
+					<td><input type="number" name="age" value="<%= user3.getAge() %>" placeholder="숫자 입력"/></td>
 				</tr>
 				<tr>					
 					<td colspan="2" align="right">

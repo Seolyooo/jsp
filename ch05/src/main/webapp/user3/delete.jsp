@@ -15,7 +15,7 @@
 		Class.forName("oracle.jdbc.driver.OracleDriver");
 		Connection conn = DriverManager.getConnection(host, user, pass);
 		
-		PreparedStatement psmt = conn.prepareStatement("DELETE FROM USER2 WHERE USER_ID = ?");
+		PreparedStatement psmt = conn.prepareStatement("DELETE FROM USER3 WHERE USER_ID = ?");
 		psmt.setString(1, user_id);
 		
 		psmt.executeUpdate();

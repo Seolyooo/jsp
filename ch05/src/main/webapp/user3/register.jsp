@@ -6,7 +6,7 @@
 		<title>Insert title here</title>
 	</head>
 	<body>
-		<h3>user2 등록</h3>
+		<h3>user3 등록</h3>
 		<a href ="../jdbc.jsp">처음으로</a>
 		<a href ="../list.jsp">등록하기</a>
 	

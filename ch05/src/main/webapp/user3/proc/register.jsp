@@ -22,7 +22,7 @@
 		Connection conn =  DriverManager.getConnection(host, user, pass);
 		
 		//sql 실행 객체
-		String sql ="insert into user2  values(?,?,?,?)";
+		String sql ="insert into user3  values(?,?,?,?)";
 		PreparedStatement psmt  =conn.prepareStatement(sql);
 		psmt.setString(1, user_id);
 		psmt.setString(2, name);

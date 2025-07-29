@@ -1,6 +1,6 @@
 <%@page import="java.util.List"%>
 <%@page import="java.util.ArrayList"%>
-<%@page import="vo.User2vo"%>
+<%@page import="vo.User3vo"%>
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.Statement"%>
 <%@page import="java.sql.DriverManager"%>
@@ -14,7 +14,7 @@
 		String pass = "1234";
 		
 		
-		List<User2vo> users = new ArrayList<>();
+		List<User3vo> users = new ArrayList<>();
 	try{
 		
 		//드라이버 로드
@@ -22,11 +22,11 @@
 		Connection conn =  DriverManager.getConnection(host, user, pass);
 		
 		Statement stmt = conn.createStatement();
-		String sql = "select * from user2";
+		String sql = "select * from user3";
 		ResultSet rs =stmt.executeQuery(sql);
 		
 		while(rs.next()){
-			User2vo vo = new User2vo(); 
+			User3vo vo = new User3vo(); 
 			vo.setUser_id(rs.getString(1));
 			vo.setName(rs.getString(2));
 			vo.setHp(rs.getString(3));
@@ -51,10 +51,10 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>user1 list</title>
+		<title>user3 list</title>
 	</head>
 	<body>
-		<h3>user2 목록</h3>
+		<h3>user3 목록</h3>
 		<a href ="../jdbc.jsp">처음으로</a>
 		<a href ="./register.jsp">등록하기</a>
 		
@@ -67,20 +67,20 @@
 			<td>관리</td>
 		</tr>
 		
-		<% for(User2vo user2 : users){ %>
+		<% for(User3vo user3 : users){ %>
 		
 		
 		<tr>
-			<td><%=user2.getUser_id() %></td>
-			<td><%=user2.getName() %></td>
-			<td><%=user2.getHp() %></td>
-			<td><%=user2.getAge() %></td>
+			<td><%=user3.getUser_id() %></td>
+			<td><%=user3.getName() %></td>
+			<td><%=user3.getHp() %></td>
+			<td><%=user3.getAge() %></td>
 			<td>
 			<!-- 수정하고자 하는 사용자 아이디를 modify.jsp로 전송 -->
-					<a href="./modify.jsp?user_id=<%= user2.getUser_id() %>">수정</a>
+					<a href="./modify.jsp?user_id=<%= user3.getUser_id() %>">수정</a>
 					
 					<!-- 삭제하고자 하는 사용자 아이디를 delete.jsp로 전송 -->
-					<a href="./delete.jsp?user_id=<%= user2.getUser_id() %>">삭제</a>
+					<a href="./delete.jsp?user_id=<%= user3.getUser_id() %>">삭제</a>
 				</td>
 		</tr>
 		<%} %>

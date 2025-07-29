@@ -19,6 +19,7 @@
 		<a href ="./user3/list.jsp">user3 crud 실습</a><hr/>
 		<a href ="./user4/list.jsp">user4 crud 실습</a><hr/>
 		<a href ="./user5/list.jsp">user5 crud 실습</a><hr/>
-		<a href ="./user6/list.jsp">user6 crud 실습</a>
+		<a href ="./user6/list.jsp">user6 crud 실습</a><hr/>
+		<a href ="./user7/list.jsp">user7 crud 실습</a>
 	</body>
 </html>
