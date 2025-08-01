@@ -19,12 +19,18 @@
 		
 		//드라이버 로드
 		Class.forName("oracle.jdbc.driver.OracleDriver");
+		//데이터베이스와 실제 연결 생성
 		Connection conn =  DriverManager.getConnection(host, user, pass);
 		
+		//sql을 실행할 수 있는 statement 객체 생성
 		Statement stmt = conn.createStatement();
+		//sql문을 문자열로 작성
 		String sql = "select * from user1";
+		//stmt를 통해 sql 쿼리를 실행하고, 결과를 resultset을 받음
+		//reslutset은 쿼리의 행들을 순차적으로 읽을 수 있게 해주는 객체
 		ResultSet rs =stmt.executeQuery(sql);
 		
+		//resultset을 반복하며 각행의 데이터를 user1vo 객체로 변환하고 users 리스트에 추가함
 		while(rs.next()){
 			User1vo vo = new User1vo(); 
 			vo.setUser_id(rs.getString(1));
