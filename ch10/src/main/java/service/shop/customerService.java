@@ -2,7 +2,7 @@ package service.shop;
 
 import java.util.List;
 
-import dao.shop.customerDao;
+import dao.shop.CustomerDAO;
 import dto.shop.customerDto;
 
 //열거형으로 싱글톤 객체 생성
@@ -10,7 +10,7 @@ public enum customerService {
 	
 	instance;
 	
-	private customerDao dao = customerDao.getInstance();
+	private CustomerDAO dao = CustomerDAO.getInstance();
 
 	public void register(customerDto dto) {
 		dao.insertCustomer(dto);

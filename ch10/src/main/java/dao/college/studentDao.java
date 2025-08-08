@@ -3,13 +3,13 @@ package dao.college;
 import java.util.ArrayList;
 import java.util.List;
 
-import dto.collete.studentDto;
+import dto.college.studentDto;
 import util.DBHelper;
 
 public class studentDao extends DBHelper{
 	
 	private static final studentDao instance = new studentDao();
-	public studentDao getInstance() {
+	public static studentDao getInstance() {
 		return instance;
 	}
 	
