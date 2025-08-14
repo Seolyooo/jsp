@@ -7,12 +7,14 @@ public class User6vo {
 	private String gender;
 	private int age;
 	private String addr;
+	
 	public int getSeq() {
 		return seq;
 	}
 	public void setSeq(int seq) {
 		this.seq = seq;
 	}
+	
 	public String getName() {
 		return name;
 	}
@@ -42,6 +44,7 @@ public class User6vo {
 		return "User6vo [seq=" + seq + ", name=" + name + ", gender=" + gender + ", age=" + age + ", addr=" + addr
 				+ "]";
 	}
+	
 	
 	
 

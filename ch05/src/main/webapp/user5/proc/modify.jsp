@@ -20,7 +20,7 @@
 		
 		Statement stmt = conn.createStatement();
 		
-		String sql = "update user1 set hp = ?, age = ? where name = ?";
+		String sql = "update user6 set hp = ?, age = ? where name = ?";
 			
 		stmt.executeUpdate(sql);
 		

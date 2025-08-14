@@ -50,13 +50,15 @@
 		maxIdle="13"
 		maxWaitMillis="3000"
 	/>
+
+		
 	<Resource
 		name="jdbc/college"
 		auth="Container"
 		type="javax.sql.DataSource"
 		driverClassName="oracle.jdbc.driver.OracleDriver"
 		url="jdbc:oracle:thin:@localhost:1521:xe"
-		username="college"
+		username="erdcollege"
 		password="1234"
 		maxTotal="13"
 		maxIdle="13"
