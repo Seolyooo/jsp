@@ -5,9 +5,8 @@ public class User1vo {
 	private String user_id;
 	private String name;
 	private String hp;
-	
-
 	private int age;
+	
 	public String getUser_id() {
 		return user_id;
 	}
