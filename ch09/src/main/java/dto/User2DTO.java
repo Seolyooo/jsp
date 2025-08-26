@@ -1,8 +1,5 @@
 package dto;
-
-
 public class User2DTO {
-	
 	private String user_id;
 	private String name;
 	private String hp;
@@ -32,20 +29,9 @@ public class User2DTO {
 	public void setAge(int age) {
 		this.age = age;
 	}
-	
-	public void setAge(String age) {
-		
-		if(age != null) {			
-			this.age = Integer.parseInt(age);						
-		}		
-	}
-	
-	
 	@Override
 	public String toString() {
 		return "User2DTO [user_id=" + user_id + ", name=" + name + ", hp=" + hp + ", age=" + age + "]";
 	}
 	
-	
-
 }
