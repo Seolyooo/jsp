@@ -73,7 +73,7 @@
 			<td><%=user7.getEmail() %></td>
 			<td>
 				<a href="./modify.jsp?id=<%=user7.getId()%>">수정</a>
-				<a href="#">삭제</a>
+				<a href="./delete.jsp?id=<%=user7.getId()%>">삭제</a>
 			</td>
 		</tr>	 
 		

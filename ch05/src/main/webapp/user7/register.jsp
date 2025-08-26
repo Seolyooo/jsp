@@ -9,7 +9,7 @@
 <body>
 	<h3>user7 등록</h3>
 	 <a href="../jdbc.jsp">처음으로</a>
-	 <a href="./list">목록</a>
+	 <a href="./list.jsp">목록</a>
 	 
 	<form action="./proc/register.jsp" method="post">
 	 <table border="1">

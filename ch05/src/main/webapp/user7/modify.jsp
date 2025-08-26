@@ -1,11 +1,17 @@
+<%@page import="vo.User7vo"%>
+<%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.PreparedStatement"%>
 <%@page import="java.sql.DriverManager"%>
 <%@page import="java.sql.Connection"%>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%
+	String id = request.getParameter("id");
+	
 	String host = "jdbc:oracle:thin:@localhost:1521:xe"; 
 	String user = "seolyooo";
 	String pass = "1234";
+	
+	User7vo user7 = null;
 	
 	try{
 		Class.forName("oracle.jdbc.driver.OracleDriver");		
@@ -13,7 +19,21 @@
 		
 		String sql="select * from user7 where id =?";
 		PreparedStatement psmt = conn.prepareStatement(sql);
-		psmt.setString
+		psmt.setString(1, id);
+		
+		ResultSet rs = psmt.executeQuery();
+		
+		if(rs.next()){
+			user7 = new User7vo();
+			user7.setId(rs.getInt(1));
+			user7.setName(rs.getString(2));
+			user7.setAge(rs.getInt(3));
+			user7.setEmail(rs.getString(4));
+		}
+		
+		rs.close();
+		psmt.close();
+		conn.close();
 		
 		
 		
@@ -33,25 +53,25 @@
 <body>
 	<h3>user7 수정</h3>
 	 <a href="../jdbc.jsp">처음으로</a>
-	 <a href="./list">목록</a>
+	 <a href="./list.jsp">목록</a>
 	 
 	<form action="./proc/modify.jsp" method="post">
 	 <table border="1">
 	 	<tr>
 	 		<td>아이디</td>
-	 		<td><input type="number" name="id"  readonly placeholder="아이디 입력"/> </td>
+	 		<td><input type="number" name="id" readonly value="<%=user7.getId() %>" placeholder="아이디 입력"/> </td>
 		</tr>
 		<tr>
 	 		<td>이름</td>
-	 		<td><input type="text" name="name" placeholder="이름 입력"/> </td>
+	 		<td><input type="text" name="name" value="<%=user7.getName() %>" placeholder="이름 입력"/> </td>
 	 	</tr>
 	 	<tr>	
 	 		<td>나이</td>
-	 		<td><input type="number" name="age" placeholder="나이 입력"/> </td>
+	 		<td><input type="number" name="age" value="<%=user7.getAge() %>" placeholder="나이 입력"/> </td>
 	 	</tr>
 	 	<tr>
 	 		<td>메일</td>
-	 		<td><input type ="text" name="age" placeholder="메일 입력"/> </td>
+	 		<td><input type ="text" name="email" value="<%=user7.getEmail() %>" placeholder="메일 입력"/> </td>
 	 	</tr>
 	 	<tr>
 	 		<td colspan="2" align="right">
