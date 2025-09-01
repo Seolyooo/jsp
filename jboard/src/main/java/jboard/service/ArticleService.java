@@ -11,8 +11,8 @@ public enum ArticleService {
 	public void register() {}
 	public void findbyId() {}
 	public void findAll() {}
-	public void register() {}
-	public void register() {}
+	public void modify() {}
+	public void remove() {}
 	
 
 }
